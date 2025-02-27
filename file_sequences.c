@@ -9,11 +9,14 @@ int main()
 {
     FILE *fp;
  
-    char row[LEN];
     char ch;
-  
-    printf("READING 01_txt.in \n");
-    fp = fopen("01_text.in", "r");
+ 
+   printf("Enter the file to read \n");
+   fgets(file,sizeof(file),stdin);
+   file[strcspn(file, "\n")] = '\0';
+
+    printf("READING %s \n",file);
+    fp = fopen(file, "r");
  
     if (fp == NULL){
         printf("Error: impossible to open the file file.txt\n");
