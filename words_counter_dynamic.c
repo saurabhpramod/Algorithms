@@ -1,4 +1,4 @@
-
+//Algorithm to count frequency of words from a file in another file 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
