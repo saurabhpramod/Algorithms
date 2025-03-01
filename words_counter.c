@@ -1,5 +1,5 @@
 
-//C algorithm to find the number of occurences of a word in a string
+//Algorithm to find the number of occurences of each word in a string
 
 #include <stdio.h>
 #include <stdlib.h> 
