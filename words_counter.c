@@ -1,3 +1,6 @@
+
+//C algorithm to find the number of occurences of a word in a string
+
 #include <stdio.h>
 #include <stdlib.h> 
 #include <string.h> 
@@ -28,10 +31,6 @@ int main()
     }
     toLower(str);
 
-    
-
-
-    
 
     token=strtok(str,delimiters);
 
