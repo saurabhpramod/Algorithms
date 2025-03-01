@@ -1,4 +1,4 @@
-
+//Encoding and decoding a string to and from morse code
 
 #include <stdio.h>
 #include <stdlib.h> 
