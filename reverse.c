@@ -1,4 +1,4 @@
-
+//reversing an array of integers using pointers
 
 
 #include <stdio.h>
