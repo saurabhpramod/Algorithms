@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Mar 10 23:10:44 2025
+# Make data base, printed on Wed Mar 12 18:55:48 2025
 
 # Variables
 
@@ -41,7 +41,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/saurabh/Desktop/myexercises
+PWD = /home/saurabh/Desktop/myexercises/Lab 6
 # environment
 ZYPAK_ZYGOTE_STRATEGY_SPAWN = 1
 # automatic
@@ -71,7 +71,7 @@ ALSA_CONFIG_DIR = /usr/share/alsa
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/saurabh/Desktop/myexercises
+CURDIR := /home/saurabh/Desktop/myexercises/Lab 6
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
@@ -83,6 +83,7 @@ ZYPAK_LIB = /app/bin/../lib
 # environment
 MFLAGS = -pqrR
 # environment
+ 
 SSH_AUTH_SOCK = /run/flatpak/ssh-auth
 # default
 .SHELLFLAGS := -c
@@ -96,8 +97,8 @@ XDG_CONFIG_DIRS = /app/etc/xdg:/etc/xdg
 ALSA_CONFIG_PATH = /usr/share/alsa/alsa-flatpak.conf
 # environment
 XDG_SESSION_DESKTOP = pop-wayland
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
+# makefile
+MAKEFILE_LIST := 
 # environment
 FLATPAK_SANDBOX_DIR = /home/saurabh/.var/app/com.visualstudio.code/sandbox
 # automatic
@@ -115,7 +116,7 @@ AT_SPI_BUS_ADDRESS = unix:path=/run/flatpak/at-spi-bus
 # environment
 XDG_DATA_HOME = /home/saurabh/.var/app/com.visualstudio.code/data
 # environment
-SESSION_MANAGER = local/fractal-panorama:@/tmp/.ICE-unix/1889,unix/fractal-panorama:/tmp/.ICE-unix/1889
+SESSION_MANAGER = local/fractal-panorama:@/tmp/.ICE-unix/1812,unix/fractal-panorama:/tmp/.ICE-unix/1812
 # automatic
 *F = $(notdir $*)
 # environment
@@ -157,13 +158,14 @@ XCURSOR_PATH = /run/host/user-share/icons:/run/host/share/icons
 # default
 MAKEFILES := 
 # automatic
+ 
 ^F = $(notdir $^)
 # environment
 DBUS_SYSTEM_BUS_ADDRESS = unix:path=/run/dbus/system_bus_socket
 # environment
 XDG_CONFIG_HOME = /home/saurabh/.var/app/com.visualstudio.code/config
 # environment
-INVOCATION_ID = 47881650571f47f8910e65628e5be9ff
+INVOCATION_ID = 8ec54bedad3c44218087039188b47ec4
 # environment
 USERNAME = saurabh
 # environment
@@ -189,9 +191,9 @@ container = flatpak
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /home/saurabh/.local/share/flatpak/exports/share/applications/com.visualstudio.code.desktop
 # makefile
-.DEFAULT_GOAL := clean
+.DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1918
+SYSTEMD_EXEC_PID = 1841
 # environment
 NPM_CONFIG_GLOBALCONFIG = /app/etc/npmrc
 # environment
@@ -203,9 +205,9 @@ DISPLAY = :0
 # default
 MAKE_VERSION := 4.4.1
 # environment
-MANAGERPID = 1802
+MANAGERPID = 1669
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3694
+GIO_LAUNCHED_DESKTOP_FILE_PID = 17024
 # environment
 _ = /usr/bin/make
 # environment
@@ -213,7 +215,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 PULSE_CLIENTCONFIG = /run/flatpak/pulse/config
 # environment
-JOURNAL_STREAM = 9:16105
+JOURNAL_STREAM = 9:14257
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -223,6 +225,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
+ 
 VSCODE_IPC_HOOK = /run/user/1000/vscode-fa5bc72c-1.97-main.sock
 # default
 .RECIPEPREFIX := 
@@ -251,7 +254,8 @@ ZYPAK_BIN = /app/bin
 # environment
 GDMSESSION = pop-wayland
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=14/146=10%
+ 
+# Load=119/1024=12%, Rehash=0, Collisions=14/143=10%
 
 # Pattern-specific Variable Values
 
@@ -259,9 +263,9 @@ GDMSESSION = pop-wayland
 
 # Directories
 
-# . (device 66307, inode 14446179): 19 files, no impossibilities.
+# . (device 66307, inode 1311099): 7 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -272,21 +276,9 @@ GDMSESSION = pop-wayland
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-02-13 21:01:59.800639522
-#  File has been updated.
-#  Successfully updated.
-
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
 #  File does not exist.
- 
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 5):
-	@echo "Cleaning the current directory..."
-	@rm -f *.out 2>/dev/null
-	@echo "Cleaning complete."
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
@@ -301,25 +293,34 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-.PHONY: clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/18=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/16=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 215 B / avg = 8 B
-# current buf: size = 8162 B / used = 215 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 14 / storage = 145 B / avg = 10 B
+# current buf: size = 8162 B / used = 145 B / count = 14 / avg = 10 B
 
-# strcache performance: lookups = 31 / hit rate = 19%
+# strcache performance: lookups = 16 / hit rate = 12%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/31=0%
-# Finished Make data base on Mon Mar 10 23:10:44 2025
+# Load=14/8192=0%, Rehash=0, Collisions=0/16=0%
+# Finished Make data base on Wed Mar 12 18:55:48 2025
 
  

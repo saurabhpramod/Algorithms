@@ -50,11 +50,10 @@ void make(rectangle* rectangles,int lines)
         else 
         {
             // Free memory for the duplicate rectangle
+            printf("\nDeleting duplicate rectangle: %s at index: %d\n",rectangles[i].name,i);
             free(rectangles[i].name); 
-            rectangles[i].vertex_x1=0;
-            rectangles[i].vertex_x2=0;
-            rectangles[i].vertex_y1=0;
-            rectangles[i].vertex_y2=0;
+           
+         
         }
     }
 
@@ -68,6 +67,8 @@ void make(rectangle* rectangles,int lines)
         }
     
     }
+
+
     
 }
 
@@ -83,13 +84,11 @@ void area(rectangle *rectangles,int lines)
       return;  // Stop further processing if memory allocation fails
     }
     
-    for(int i=0;i<lines;i++)
+    for(int i=0;i<num;i++)
     {
 
-       if(rectangles[i].name !=NULL)
-       {
-              area[i]=fabs(((rectangles[i].vertex_x1)-(rectangles[i].vertex_x2))*((rectangles[i].vertex_y1)-(rectangles[i].vertex_y2)));
-       }
+           area[i]=fabs(((rectangles[i].vertex_x1)-(rectangles[i].vertex_x2))*((rectangles[i].vertex_y1)-(rectangles[i].vertex_y2)));
+       
      }
 
    printf("Area calculated successfully!\n");
@@ -127,6 +126,26 @@ void area(rectangle *rectangles,int lines)
            printf("\nName:%s \nArea: %.2f\n",rectangles[i].name,(area[i]));   
     }
 
+    FILE *file = fopen("area.out", "w");
+    if (file == NULL) 
+    {
+        printf("Error opening file.\n");
+       // free(area);  // Make sure to free the memory before returning
+        return;
+    }
+
+    // Print sorted rectangles to the file
+    fprintf(file, "Sorted Rectangles by Area:\n");
+    for (int i = 0; i < num; i++)
+    {
+        fprintf(file, "\nName: %s \nArea: %.2f\n", rectangles[i].name, area[i]);
+    }
+
+    printf("Sorted rectangles printed to 'area.out'.\n");
+
+    // Close the file after writing
+    fclose(file);
+
     free(area);
 }
 
@@ -148,7 +167,7 @@ void perimeter(rectangle *rectangles,int lines)
         printf("\nName:%s \nPerimeter:%.2f\n",rectangles[i].name,(perimeter[i]));
         printf("\nIndex:%d\n",i);
     }
-
+    printf("\nNow sorting perimeter......\n");
     for (int i = 0; i < num - 1; i++) 
     {
         // Inner loop: compare adjacent characters
@@ -168,7 +187,27 @@ void perimeter(rectangle *rectangles,int lines)
         }
     }
 
-    printf("\nNow sorting perimeter......\n");
+    FILE *file = fopen("perimeter.out", "w");
+    if (file == NULL) 
+    {
+        printf("Error opening file.\n");
+        //free(area);  // Make sure to free the memory before returning
+        return;
+    }
+
+    // Print sorted rectangles to the file
+    fprintf(file, "Sorted Rectangles by Perimeter:\n");
+    for (int i = 0; i < num; i++)
+    {
+        fprintf(file, "\nName: %s \nPerimeter: %.2f\n", rectangles[i].name, perimeter[i]);
+    }
+
+    printf("Sorted rectangles printed to 'perimeter.out'.\n");
+
+    // Close the file after writing
+    fclose(file);
+
+  
 
     for(int i=0;i<num;i++)
     {
@@ -176,7 +215,10 @@ void perimeter(rectangle *rectangles,int lines)
         printf("\nName:%s \nPerimeter: %.2f\n",rectangles[i].name,(perimeter[i]));
         
     }
-free(perimeter);
+
+
+
+     free(perimeter);
 
 }
 
@@ -235,11 +277,13 @@ int main()
        
     } 
     token=strtok(NULL, " ");
+   
     if (token != NULL) {
         // Convert the token to a float
         vertex_y_temp = atof(token);  // atof() converts a string to a float
         
     } 
+   
 
     rectangles[i].name=(char *)malloc(strlen(name_temp)+1);
     strcpy(rectangles[i].name,name_temp);
@@ -257,8 +301,10 @@ int main()
    area(rectangles,lines);
    perimeter(rectangles,lines);
 
-   free(rectangles);
-   printf("\nMemory freed! \n");
+
+   free(rectangles);  // Free the array of rectangles
+
+   printf("\nMemory freed succesfully! \n");
     
     return 0;
 }
