@@ -1,10 +1,24 @@
-# Implementation of different algorithms in C
+# Implementing algorithms in C
 
-Compile
+To compile, using gcc
 ```shell
 gcc filename.c
 ```
-Run
+.. and then to run
 ```shell
 ./a.out
 ```
+
+## `git` workflow
+
+Simple `git` workflow
+```shell
+git add .
+git commit -a
+```
+
+And then, after writing a commit message, just `:x` on vim and
+```shell
+git push origin master
+```
+
