@@ -10,18 +10,18 @@ typedef struct {
     float vertex_y1;
     float vertex_x2;
     float vertex_y2;
-} rectangle;
+} rectangle; //declare structure with four vertices and name
 
 void make(rectangle* rectangles,int lines)
 {
-
     int found[lines];
     
     for(int i=0;i<lines;i++)
     {
-      found[i]=0;
+      found[i]=0;//flag to remove duplicate rectangles
     }
-    for(int i=0;i<lines-1;i++)
+
+    for(int i=0;i<lines-1;i++)//combine the lines to complete the rectangles
     {
         for(int j=i+1;j<lines;j++)
         {
@@ -76,15 +76,14 @@ void area(rectangle *rectangles,int lines)
 {
     int num=(lines/2);
     float *area=(float *)malloc(sizeof(float)*num);
-   // printf("The number of rectangles: %d\n",num);
-   // rectangle *temp_rect=(rectangle *)malloc(sizeof(rectangle));
+   
    if (area == NULL) 
    {
       printf("Memory allocation failed for area array.\n");
       return;  // Stop further processing if memory allocation fails
     }
     
-    for(int i=0;i<num;i++)
+    for(int i=0;i<num;i++)//calculate areas
     {
 
            area[i]=fabs(((rectangles[i].vertex_x1)-(rectangles[i].vertex_x2))*((rectangles[i].vertex_y1)-(rectangles[i].vertex_y2)));
@@ -225,7 +224,7 @@ void perimeter(rectangle *rectangles,int lines)
 int main()
 {
     FILE *fp;
-    fp=fopen("02_rectangles.in", "r");
+    fp=fopen("02_rectangles.in", "r"); //open file
     
 
     if (fp == NULL){
@@ -236,56 +235,56 @@ int main()
     printf("Now reading from file: \n");
 
     printf("\n");
-    fseek(fp, 0, SEEK_SET);
+    fseek(fp, 0, SEEK_SET);// move to start of file
 
     
 
-    char line[100];
-    int lines=0;
-    char *name_temp;
+    char line[100]; //temp buffer to store line
+    int lines=0; //to count #lines
+    char *name_temp; //buffer to store name
     float vertex_x_temp;
     float vertex_y_temp;
 
     while(fgets(line,sizeof(line),fp)!=NULL)
     {
         lines++;
-    }
+    }//count number of lines
 
-    rewind(fp);
+    rewind(fp);//move to start of file
 
-    rectangle *rectangles=malloc(lines* sizeof(rectangle));
+    rectangle *rectangles=malloc(lines* sizeof(rectangle));//allocate memory for rectangles
     printf("Memory allocated successfully!\n");
 
     for(int i=0;i<lines;i++)
     {
 
-    fgets(line,sizeof(line),fp);
-
-    char *token=strtok(line, " ");
+       fgets(line,sizeof(line),fp);
+        char *token=strtok(line, " ");
     
-    if(token!=NULL)
-    {
-      name_temp=token;
-    }
+        if(token!=NULL)
+        {
+            name_temp=token;//store name
+        }
 
-    token=strtok(NULL, " ");
+        token=strtok(NULL, " ");//move to next string
 
   
-    if (token != NULL) {
+       if(token != NULL)
+        {
         // Convert the token to a float
-        vertex_x_temp = atof(token);  // atof() converts a string to a float
-       
-    } 
-    token=strtok(NULL, " ");
+          vertex_x_temp = atof(token);
+         } // atof() converts a string to a float 
+
+        token=strtok(NULL, " ");
    
-    if (token != NULL) {
+        if(token != NULL) 
+        {
         // Convert the token to a float
         vertex_y_temp = atof(token);  // atof() converts a string to a float
-        
-    } 
+       } 
    
 
-    rectangles[i].name=(char *)malloc(strlen(name_temp)+1);
+    rectangles[i].name=(char *)malloc(strlen(name_temp)+1);//allocate memory for name
     strcpy(rectangles[i].name,name_temp);
 
     printf("\nRectangle name: %s\n",rectangles[i].name);
@@ -294,17 +293,17 @@ int main()
     printf("Vertex: %f\n",rectangles[i].vertex_x1);
     rectangles[i].vertex_y1=vertex_y_temp;
     printf("Vertex: %f\n",rectangles[i].vertex_y1);
+   }
 
 
-}
-   make(rectangles,lines);
-   area(rectangles,lines);
-   perimeter(rectangles,lines);
+   make(rectangles,lines);//complete the rectangles by combining the two lines
+   area(rectangles,lines);//calculat earea
+   perimeter(rectangles,lines);//calculate perimeter
 
 
    free(rectangles);  // Free the array of rectangles
 
    printf("\nMemory freed succesfully! \n");
     
-    return 0;
+   return 0;
 }

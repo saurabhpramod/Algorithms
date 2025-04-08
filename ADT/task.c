@@ -74,11 +74,6 @@ void task_print(void * t, FILE * fp)
    
 }
 
-
-
-
-
-
     void task_set_priority(task_t *t, int priority)
     {
         if(priority > MIN_PRIORITY || priority < MAX_PRIORITY)

@@ -178,7 +178,8 @@ void simulate(list_t * task_list){
     time_t timestamp = time(NULL);
     char timestamp_str[30];
     int task_num = 1;
-    while((curr_task = (task_t *)list_front(task_list)) != NULL){
+    while((curr_task = (task_t *)list_front(task_list)) != NULL)
+    {
         printf("%d. Executing task\n", task_num++);
         time_to_string(timestamp, timestamp_str);
         printf("\tStarting UTC Time:\t%s\n", timestamp_str);
